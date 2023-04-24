@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-python@master
         with:
           python-version: 3.6
-          cache: "pip" # caching pip dependencies
+          #cache: "pip" # caching pip dependencies
       - run: pip install numpy matplotlib
 
       - name: "test machine learning"
