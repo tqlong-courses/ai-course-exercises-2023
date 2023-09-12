@@ -30,7 +30,14 @@ def shopSmart(orderList, fruitShops):
         fruitShops: List of FruitShops
     """
     "*** YOUR CODE HERE ***"
-    return None
+    min_cost = float('inf')
+    best_shop = None
+    for shop in fruitShops:
+        cost = shop.getPriceOfOrder(orderList)
+        if cost < min_cost:
+            min_cost = cost
+            best_shop = shop
+    return best_shop
 
 
 if __name__ == '__main__':
