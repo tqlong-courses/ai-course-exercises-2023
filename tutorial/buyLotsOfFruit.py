@@ -35,7 +35,10 @@ def buyLotsOfFruit(orderList):
     Returns cost of order
     """
     totalCost = 0.0
-    "*** YOUR CODE HERE ***"
+    for item in orderList:
+        fruit_name = item[0]  # Lấy tên hoa quả từ phần tử đầu tiên của mỗi tuple
+        totalCost += fruitPrices[fruit_name] * item[1]
+
     return totalCost
 
 
