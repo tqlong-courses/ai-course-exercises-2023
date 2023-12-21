@@ -4,7 +4,7 @@
 # educational purposes provided that (1) you do not distribute or publish
 # solutions, (2) you retain this notice, and (3) you provide clear
 # attribution to UC Berkeley, including a link to http://ai.berkeley.edu.
-#
+# 
 # Attribution Information: The Pacman AI projects were developed at UC Berkeley.
 # The core projects and autograders were primarily created by John DeNero
 # (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).
@@ -98,7 +98,7 @@ class Gridworld(mdp.MarkovDecisionProcess):
             for y in range(self.grid.height):
                 if self.grid[x][y] == 'S':
                     return (x, y)
-        raise Exception('Grid has no start state')
+        raise 'Grid has no start state'
 
     def isTerminal(self, state):
         """
@@ -120,7 +120,7 @@ class Gridworld(mdp.MarkovDecisionProcess):
         """
 
         if action not in self.getPossibleActions(state):
-            raise Exception("Illegal action!")
+            raise "Illegal action!"
 
         if self.isTerminal(state):
             return []
@@ -205,11 +205,11 @@ class GridworldEnvironment(environment.Environment):
         for nextState, prob in successors:
             sum += prob
             if sum > 1.0:
-                raise Exception('Total transition probability more than one; sample failure.')
+                raise 'Total transition probability more than one; sample failure.'
             if rand < sum:
                 reward = self.gridWorld.getReward(state, action, nextState)
                 return (nextState, reward)
-        raise Exception('Total transition probability less than one; sample failure.')
+        raise 'Total transition probability less than one; sample failure.'
 
     def reset(self):
         self.state = self.gridWorld.getStartState()
@@ -359,7 +359,7 @@ def runEpisode(agent, environment, discount, decision, display, message, pause, 
         # GET ACTION (USUALLY FROM AGENT)
         action = decision(state)
         if action == None:
-            raise Exception('Error: Agent returned None action')
+            raise 'Error: Agent returned None action'
 
         # EXECUTE ACTION
         nextState, reward = environment.doAction(action)

@@ -4,7 +4,7 @@
 # educational purposes provided that (1) you do not distribute or publish
 # solutions, (2) you retain this notice, and (3) you provide clear
 # attribution to UC Berkeley, including a link to http://ai.berkeley.edu.
-# 
+#
 # Attribution Information: The Pacman AI projects were developed at UC Berkeley.
 # The core projects and autograders were primarily created by John DeNero
 # (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).
@@ -14,12 +14,10 @@
 
 "Common code for autograders"
 
-import cgi
+from html import escape
 import time
-import sys
 import json
 import traceback
-import pdb
 from collections import defaultdict
 import util
 
@@ -144,7 +142,7 @@ to follow your instructor's guidelines to receive credit on your project.
   def addExceptionMessage(self, q, inst, traceback):
     """
     Method to format the exception message, this is more complicated because
-    we need to cgi.escape the traceback but wrap the exception in a <pre> tag
+    we need to escape the traceback but wrap the exception in a <pre> tag
     """
     self.fail('FAIL: Exception raised: %s' % inst)
     self.addMessage('')
@@ -291,7 +289,7 @@ to follow your instructor's guidelines to receive credit on your project.
         if self.mute: util.unmutePrint()
         print('*** ' + message)
         if self.mute: util.mutePrint()
-        message = cgi.escape(message)
+        message = escape(message)
     self.messages[self.currentQuestion].append(message)
 
   def addMessageToEmail(self, message):
@@ -320,4 +318,3 @@ class Counter(dict):
     Returns the sum of counts for all keys.
     """
     return sum(self.values())
-

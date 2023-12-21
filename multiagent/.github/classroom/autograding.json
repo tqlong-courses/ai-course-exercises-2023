@@ -1,0 +1,54 @@
+{
+  "tests": [
+    {
+      "name": "Q1",
+      "setup": "sudo -H pip3 install pytest",
+      "run": "pytest -k test_q1",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Q2",
+      "setup": "sudo -H pip3 install pytest",
+      "run": "pytest -k test_q2",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 20
+    },
+    {
+      "name": "Q3",
+      "setup": "sudo -H pip3 install pytest",
+      "run": "pytest -k test_q3",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 20
+    },
+    {
+      "name": "Q4",
+      "setup": "sudo -H pip3 install pytest",
+      "run": "pytest -k test_q4",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 20
+    },
+    {
+      "name": "Q5",
+      "setup": "sudo -H pip3 install pytest",
+      "run": "pytest -k test_q5",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}
